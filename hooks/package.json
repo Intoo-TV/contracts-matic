@@ -1,0 +1,53 @@
+{
+  "name": "@intootv/hooks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src -d lib",
+    "test": "yarn build && source src/.env.develop && node lib/test/main.test.js",
+    "lint": "./node_modules/.bin/eslint --fix '**/*.{js,jsx,ts,tsx}'",
+    "format": "./node_modules/.bin/prettier --write '**/*.{js,jsx,ts,tsx,json,css,md}'",
+    "near-start": "./node_modules/.bin/babel src/near -d lib/near && cp -r src/near/abis/ lib/near/abis/ && source src/near/.env.develop && node lib/near/index.js"
+  },
+  "dependencies": {
+    "@babel/eslint-parser": "^7.11.5",
+    "aws-sdk": "^2.763.0",
+    "bn.js": "^5.1.3",
+    "eth-object": "^1.0.3",
+    "eth-revert-reason": "^1.0.3",
+    "eth-util-lite": "^1.0.1",
+    "ethereumjs-util": "^7.0.5",
+    "merkle-patricia-tree": "^4.0.0",
+    "near-api-js": "^0.30.0",
+    "node": "^14.13.0",
+    "promisfy": "^1.2.0",
+    "rainbow-bridge-sol": "1.1.0",
+    "ulid": "^2.3.0",
+    "web3": "^1.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "core-js": "^3.6.5",
+    "eslint": "^7.10.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "lint-staged": {
+    "*.+(js|jsx|ts|tsx)": [
+      "./node_modules/.bin/eslint --fix"
+    ],
+    "*.+(js|jsx|ts|tsx|json|css|md)": [
+      "./node_modules/.bin/prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
