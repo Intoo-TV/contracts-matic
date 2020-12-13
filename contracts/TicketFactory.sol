@@ -60,11 +60,7 @@ contract TicketFactory is BaseRelayRecipient, Ownable, IERC721Metadata, ERC721, 
     trustedForwarder = _forwarder;
       
     templatesRegistry = new TemplatesRegistry();
-<<<<<<< HEAD
     royaltiesToken = new IntooTVRoyalty(500 * 1e18);
-=======
-    royaltiesToken = new IntooTVRoyalty(500);
->>>>>>> d9435bb66690c42ff555c02477af3216bd468a6c
   }
 
       /**

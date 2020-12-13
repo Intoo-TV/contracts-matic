@@ -17,22 +17,14 @@
  * phrase from a file you've .gitignored so it doesn't accidentally become public.
  *
  */
-<<<<<<< HEAD
 require('dotenv').config({});
 
-=======
->>>>>>> d9435bb66690c42ff555c02477af3216bd468a6c
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const infuraKey = process.env.INFURA_KEY;
 const maticVigilKey = process.env.MATICVIGIL_KEY;
 const mnemonic = process.env.MNEMONIC;
 const etherscanKey = process.env.ETHERSCAN_API_KEY;
 
-<<<<<<< HEAD
-=======
-console.log(maticVigilKey);
-
->>>>>>> d9435bb66690c42ff555c02477af3216bd468a6c
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
