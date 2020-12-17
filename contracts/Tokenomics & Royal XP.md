@@ -21,7 +21,9 @@ Intoo TV's tokenomics includes:
 - Only 500 ɑ-Royals (alpha Royal XPs) generated on Ethereum Blockchain.
 - Each Guest will receive only 1 ɑ-Royal per usage.
 - Usage will be determined for each Derivative XP Card minted on Matic, based on Original XP Card.
-This will be part of “100 Creators” Private Beta release – and each creator will be able to receive up to 5 ɑ-Royals only. After that (if Templates are used more than 5 times), they won't receive any additional ɑ-Royal.
+- Each creator will be able to receive up to 5 ɑ-Royals only. 
+- After that (if Templates are used more than 5 times), they won't receive any additional ɑ-Royal.
+- This will be part of “100 Creators” Private Beta release.
 
 ### b-RoyalXP (v.0.5 - hybrid, bonded)
 b-RoyalXPs (bonded) have limited supply of 1500 tokens.
