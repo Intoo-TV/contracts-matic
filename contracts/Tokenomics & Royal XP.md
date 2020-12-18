@@ -29,14 +29,15 @@ Intoo TV's tokenomics includes:
 - b-RoyalXPs (bonded) have limited supply of 1500 tokens.
 - 500 are reserved to ɑ-Royals token-holders, and available to be swapped 1:1.
 
-- The remaining 1000 are released following a basic bonding curve pegged on the usage of XP Templates, such as:
-X = 1, X+1 = X+50%, (i.e.:
-1st template usage: Original Guest receives 1 RoyalXP
-2nd template usage: Original Guest receives 1.5 RoyalXPs (1+50%)
+- The remaining 1000 are released following a basic bonding curve pegged on the usage of XP Templates, such as:  
+(X = 1), (X+1 = X+50%)  
+(i.e.:  
+1st template usage: Original Guest receives 1 RoyalXP  
+2nd template usage: Original Guest receives 1.5 RoyalXPs (1+50%)  
 3rd template usage: Original Guest receives 2.25 RoyalXPs (1.5+50%))
 
 - The curve of distribution goes on till full distribution of the 1000 b-RoyalXPs.
-- After RoyalXP (see ___v.1.0___) deployment, b-RoyalXPs can be swapped for regular RoyalXPs following a reverse approach 
+- After RoyalXP (see ___v.1.0___) deployment, b-RoyalXPs can be swapped for regular RoyalXPs following a reverse approach  
 (i.e.: 1st Swap = 1:1, then 1:1-50%)
 - Swap slots will have an upper limit of 3.375:3.375 (b-RoyalXP:RoyalXP) per swap.
 
