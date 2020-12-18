@@ -34,7 +34,7 @@ Intoo TV's tokenomics includes:
 (i.e.:  
 1st template usage: Original Guest receives 1 RoyalXP  
 2nd template usage: Original Guest receives 1.5 RoyalXPs (1+50%)  
-3rd template usage: Original Guest receives 2.25 RoyalXPs (1.5+50%))
+3rd template usage: Original Guest receives 1.875 RoyalXPs (1.5+25%))
 
 - The curve of distribution goes on till full distribution of the 1000 b-RoyalXPs.
 - After RoyalXP (see ___v.1.0___) deployment, b-RoyalXPs can be swapped for regular RoyalXPs following a reverse approach  
