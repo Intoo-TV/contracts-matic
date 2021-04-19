@@ -58,12 +58,11 @@ contract TicketFactory is BaseRelayRecipient, Ownable, IERC721Metadata, ERC721, 
     ERC721(_name, _symbol)
   {
     trustedForwarder = _forwarder;
-      
     templatesRegistry = new TemplatesRegistry();
     royaltiesToken = new IntooTVRoyalty(500 * 1e18);
   }
 
-      /**
+   /**
      * return the sender of this call.
      * if the call came through our trusted forwarder, return the original sender.
      * otherwise, return `msg.sender`.
@@ -118,14 +117,13 @@ contract TicketFactory is BaseRelayRecipient, Ownable, IERC721Metadata, ERC721, 
   // 4. duration (enum Duration)
   // find the schema definition to conform to here: https://eips.ethereum.org/EIPS/eip-721
   function createTicket(
+    address _ticketCreator,
     string memory _props,
     int256 _templateIndex,
     bool _saveAsTemplate
-  ) external payable nonReentrant returns (uint256) {
+  ) external payable nonReentrant onlyOwner returns (uint256) {
     if (_templateIndex > 0 && _saveAsTemplate == true)
       revert("You can't save a card as a template if it's already a template");
-
-    address _ticketCreator = _msgSender();
 
     tokenIds.increment();
     uint256 newItemId = tokenIds.current();
@@ -154,7 +152,7 @@ contract TicketFactory is BaseRelayRecipient, Ownable, IERC721Metadata, ERC721, 
     }
 
     if (_saveAsTemplate == true) {
-      templatesRegistry.createTicketTemplate(_msgSender(), _props);
+      templatesRegistry.createTicketTemplate(_ticketCreator, _props);
     }
 
     emit TicketCreated(newItemId, _ticketCreator, _props, _templateIndex);
@@ -208,14 +206,14 @@ contract TicketFactory is BaseRelayRecipient, Ownable, IERC721Metadata, ERC721, 
     return true;
   }
 
-  function expireExperience(uint256 _ticketId) external nonReentrant {
+  function expireExperience(address owner, uint256 _ticketId) external nonReentrant onlyOwner {
     require(_ticketId <= tokenIds.current(), 'no such experience token');
     require(
       expiredExperience[_ticketId] == false,
       'experience already expired'
     );
     require(
-      ownerOf(_ticketId) == _msgSender(),
+      ownerOf(_ticketId) == owner,
       'Only owner of NFT can expire it'
     );
 
